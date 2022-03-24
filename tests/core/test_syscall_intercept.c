@@ -15,7 +15,7 @@ long __syscall_getcwd(long buf, long size) {
 int main() {
   char cwd[1024];
   int rtn = __syscall_getcwd((long)cwd, sizeof(cwd));
-  assert(rtn > 0);
+  assert(rtn >= 0);
   printf("cwd = %s\n", cwd);
   return 0;
 }

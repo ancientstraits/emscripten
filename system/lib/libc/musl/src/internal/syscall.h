@@ -93,7 +93,7 @@ hidden long __syscall_ret(unsigned long),
 
 #ifdef __EMSCRIPTEN__
 #define __socketcall(nm,a,b,c,d,e,f) __syscall(SYS_##nm, a, b, c, d, e, f)
-#define __socketcall_cp(nm,a,b,c,d,e,f) __syscall_cp(SYS_##nm, a, b, c, d, e, f)
+#define __socketcall_cp(nm,a,b,c,d,e,f) __syscall(SYS_##nm, a, b, c, d, e, f)
 #else
 static inline long __alt_socketcall(int sys, int sock, int cp, long a, long b, long c, long d, long e, long f)
 {
